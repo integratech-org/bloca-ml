@@ -6,10 +6,14 @@ readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "fastapi[standard]>=0.139.2",
+    "pydantic>=2.13.4",
 ]
 
 [dependency-groups]
 dev = [
     "pre-commit>=4.6.1",
     "ruff>=0.16.0",
+]
+training = [
+    "pandas>=3.0.5",
 ]
