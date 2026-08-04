@@ -1,5 +1,7 @@
 from datetime import datetime
+
 from pydantic import ConfigDict, Field
+
 from src.models.sensor_batch_input import SensorBatchInput
 
 

@@ -4,7 +4,6 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-
 DEFAULT_OUT = str(
     Path(__file__).parent.parent / "data" / "mock" / "mock_telemetry_raw.csv"
 )
@@ -79,7 +78,7 @@ def simulate_batch(batch_id: str, rng: np.random.Generator) -> pd.DataFrame:
     )  # pressure rises to peak and then stabilizes
     height_comp = (
         raw_height
-        - (raw_height - final_height) * (1 - (1 - frac) ** 2)  #
+        - (raw_height - final_height) * (1 - (1 - frac) ** 2)
         + rng.normal(0, 0.3, size=n_comp)
     )
     temp_comp = temp_at_compression - 3.5 * frac + rng.normal(0, 0.3, size=n_comp)
