@@ -1,0 +1,31 @@
+name: Require Issue Link
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+jobs:
+  check-issue-link:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR references an issue
+        uses: actions/github-script@v9.0.0
+        with:
+          script: |
+            const body = context.payload.pull_request.body || "";
+            const title = context.payload.pull_request.title || "";
+
+            const noIssueRegex = /\[no-issue\]/i;
+            if (noIssueRegex.test(body) || noIssueRegex.test(title)) {
+              console.log("⏭️ Skipped: marked as [no-issue]");
+              return;
+            }
+
+            const closingRegex = /(close|closes|closed|fix|fixes|fixed|resolve|resolves|resolved)\s+#\d+/i;
+            const relatedRegex = /#\d+/;
+
+            if (closingRegex.test(body)) {
+              console.log("✅ PR references an issue with a closing keyword.");
+            } else if (relatedRegex.test(body)) {
+              console.log("⚠️ PR references an issue but without a closing keyword (e.g. 'Closes #5'). Allowed, but issue won't auto-close.");
+            } else {
+              console.log("⚠️ No issue reference found. Consider adding 'Closes #5' or add '[no-issue]' if this PR intentionally has no related issue.");
+            }
