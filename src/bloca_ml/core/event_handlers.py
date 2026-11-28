@@ -1,7 +1,7 @@
-import logging
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from loguru import logger
 
 from bloca_ml.core.config import get_settings
 from bloca_ml.services.utils import (
@@ -9,8 +9,6 @@ from bloca_ml.services.utils import (
     JoblibModelLoader,
     TFLiteModelLoader,
 )
-
-logger = logging.getLogger(__name__)
 
 
 def _startup_models(app: FastAPI) -> None:
