@@ -3,8 +3,12 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from core.config import get_settings
-from services.utils import HFFileDownloader, JoblibModelLoader, TFLiteModelLoader
+from bloca_ml.core.config import get_settings
+from bloca_ml.services.utils import (
+    HFFileDownloader,
+    JoblibModelLoader,
+    TFLiteModelLoader,
+)
 
 logger = logging.getLogger(__name__)
 

@@ -8,6 +8,8 @@ services:
       - "8000:8000"
     env_file:
       - .env
+    volumes:
+      - fastapi-data:/app/ml_models
     develop:
       watch:
         # Sync source file changes directly into the container so FastAPI's
@@ -25,3 +27,6 @@ services:
           path: pyproject.toml
         - action: rebuild
           path: uv.lock
+
+volumes:
+  fastapi-data:

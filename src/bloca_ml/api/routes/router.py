@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from api.routes import health, predict
+from bloca_ml.api.routes import health, predict
 
 api_router = APIRouter()
 
