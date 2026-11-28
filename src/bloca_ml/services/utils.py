@@ -1,12 +1,10 @@
-import logging
 from pathlib import Path
 from typing import Any
 
 import joblib
 from ai_edge_litert.interpreter import Interpreter
 from huggingface_hub import hf_hub_download
-
-logger = logging.getLogger(__name__)
+from loguru import logger
 
 
 class HFFileDownloader:

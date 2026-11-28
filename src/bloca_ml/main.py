@@ -1,5 +1,3 @@
-import logging
-
 from fastapi import FastAPI
 
 from bloca_ml.api.routes.router import api_router
@@ -8,7 +6,6 @@ from bloca_ml.core.event_handlers import lifespan
 
 
 def get_app() -> FastAPI:
-    logging.basicConfig(level=logging.INFO)
     settings = get_settings()
 
     fast_app = FastAPI(
