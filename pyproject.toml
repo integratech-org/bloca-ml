@@ -5,18 +5,15 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "fastapi[standard]>=0.139.2",
-    "pydantic>=2.13.4",
-    "pydantic-settings>=2.14.2",
+  "ai-edge-litert>=2.4.1",
+  "fastapi[standard]>=0.139.2",
+  "huggingface-hub>=2.5.0",
+  "joblib>=1.6.0",
+  "pillow>=13.0.0",
+  "pydantic>=2.13.4",
+  "pydantic-settings>=2.14.2",
+  "scikit-learn>=1.9.1",
 ]
 
 [dependency-groups]
-dev = [
-    "pre-commit>=4.6.1",
-    "ruff>=0.16.0",
-]
-training = [
-    "pandas>=3.0.5",
-    "scikit-learn>=1.9.0",
-    "tensorflow>=2.21.0",
-]
+dev = ["pre-commit>=4.6.1", "ruff>=0.16.0"]

@@ -1,11 +1,17 @@
-# from fastapi import APIRouter
-#
-# router = APIRouter(prefix="/predict", tags=["predict"])
-#
-#
-# @router.post("/strength/")
-# def predict_strength():
-#
-#
-# @router.post("/surface/")
-# def predict_surface():
+from fastapi import APIRouter, Depends
+
+from core.security import api_key_auth
+
+router = APIRouter(
+    prefix="/predict", tags=["predict"], dependencies=[Depends(api_key_auth)]
+)
+
+
+@router.post("/strength/")
+def predict_strength():
+    return {"message": "Strength prediction endpoint"}
+
+
+@router.post("/surface/")
+def predict_surface():
+    return {"message": "Surface prediction endpoint"}
