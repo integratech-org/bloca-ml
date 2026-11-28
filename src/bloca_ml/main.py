@@ -2,9 +2,9 @@ import logging
 
 from fastapi import FastAPI
 
-from api.routes.router import api_router
-from core.config import get_settings
-from core.event_handlers import lifespan
+from bloca_ml.api.routes.router import api_router
+from bloca_ml.core.config import get_settings
+from bloca_ml.core.event_handlers import lifespan
 
 
 def get_app() -> FastAPI:

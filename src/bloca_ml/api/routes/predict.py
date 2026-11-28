@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 
-from core.security import api_key_auth
+from bloca_ml.core.security import api_key_auth
 
 router = APIRouter(
     prefix="/predict", tags=["predict"], dependencies=[Depends(api_key_auth)]

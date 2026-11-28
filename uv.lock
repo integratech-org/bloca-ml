@@ -87,7 +87,7 @@ wheels = [
 [[package]]
 name = "bloca-ml"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "ai-edge-litert" },
     { name = "fastapi", extra = ["standard"] },

@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from models.health import HealthResponse
+from bloca_ml.models.health import HealthResponse
 
 router = APIRouter(prefix="/health", tags=["health"])
 

@@ -22,12 +22,12 @@ setup:
 # Run dev server with auto-reload
 [group('dev')]
 dev:
-  uv run fastapi dev src/main.py --host 0.0.0.0 --port 8000
+  uv run fastapi dev --host 0.0.0.0 --port 8000
 
 # Run production-like server (no reload)
 [group('dev')]
 run:
-  uv run fastapi run src/main.py --host 0.0.0.0 --port 8000
+  uv run fastapi run --host 0.0.0.0 --port 8000
 
 
 
